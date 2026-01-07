@@ -1,0 +1,58 @@
+[
+    {
+        "model": "core.predefinedtask",
+        "pk": 1,
+        "fields": {
+            "service_type": 1,
+            "description": "Drain oil"
+        }
+    },
+    {
+        "model": "core.predefinedtask",
+        "pk": 2,
+        "fields": {
+            "service_type": 1,
+            "description": "Replace filter"
+        }
+    },
+    {
+        "model": "core.predefinedtask",
+        "pk": 3,
+        "fields": {
+            "service_type": 1,
+            "description": "Put new oil"
+        }
+    },
+    {
+        "model": "core.predefinedtask",
+        "pk": 4,
+        "fields": {
+            "service_type": 2,
+            "description": "Check battery voltage"
+        }
+    },
+    {
+        "model": "core.predefinedtask",
+        "pk": 5,
+        "fields": {
+            "service_type": 2,
+            "description": "Clean battery terminals"
+        }
+    },
+    {
+        "model": "core.predefinedtask",
+        "pk": 6,
+        "fields": {
+            "service_type": 3,
+            "description": "Adjust wheel alignment"
+        }
+    },
+    {
+        "model": "core.predefinedtask",
+        "pk": 7,
+        "fields": {
+            "service_type": 4,
+            "description": "Inspect suspension components"
+        }
+    }
+]

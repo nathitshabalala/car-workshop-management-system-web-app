@@ -1,0 +1,52 @@
+[
+    {
+        "model": "core.partinvoice",
+        "pk": 1,
+        "fields": {
+            "invoice": 1,
+            "part": 1,
+            "quantity": 1,
+            "price": "200.00"
+        }
+    },
+    {
+        "model": "core.partinvoice",
+        "pk": 2,
+        "fields": {
+            "invoice": 1,
+            "part": 2,
+            "quantity": 1,
+            "price": "300.00"
+        }
+    },
+    {
+        "model": "core.partinvoice",
+        "pk": 3,
+        "fields": {
+            "invoice": 2,
+            "part": 3,
+            "quantity": 1,
+            "price": "150.00"
+        }
+    },
+    {
+        "model": "core.partinvoice",
+        "pk": 4,
+        "fields": {
+            "invoice": 3,
+            "part": 4,
+            "quantity": 1,
+            "price": "250.00"
+        }
+    },
+    {
+        "model": "core.partinvoice",
+        "pk": 5,
+        "fields": {
+            "invoice": 4,
+            "part": 5,
+            "quantity": 1,
+            "price": "400.00"
+        }
+    }
+]

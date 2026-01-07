@@ -1,0 +1,52 @@
+[
+    {
+        "model": "core.quotepart",
+        "pk": 1,
+        "fields": {
+            "quote": 1,
+            "part": 1,
+            "quantity": 1,
+            "price": "20.00"
+        }
+    },
+    {
+        "model": "core.quotepart",
+        "pk": 2,
+        "fields": {
+            "quote": 1,
+            "part": 2,
+            "quantity": 1,
+            "price": "30.00"
+        }
+    },
+    {
+        "model": "core.quotepart",
+        "pk": 3,
+        "fields": {
+            "quote": 2,
+            "part": 3,
+            "quantity": 1,
+            "price": "15.00"
+        }
+    },
+    {
+        "model": "core.quotepart",
+        "pk": 4,
+        "fields": {
+            "quote": 3,
+            "part": 4,
+            "quantity": 1,
+            "price": "25.00"
+        }
+    },
+    {
+        "model": "core.quotepart",
+        "pk": 5,
+        "fields": {
+            "quote": 4,
+            "part": 5,
+            "quantity": 1,
+            "price": "40.00"
+        }
+    }
+]

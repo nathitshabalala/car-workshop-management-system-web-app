@@ -1,0 +1,42 @@
+[
+    {
+        "model": "core.car",
+        "pk": 1,
+        "fields": {
+            "customer": 1,
+            "predefined_car": 1,
+            "is_available": true,
+            "reg_no": "ABC123"
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 2,
+        "fields": {
+            "customer": 1,
+            "predefined_car": 2,
+            "is_available": true,
+            "reg_no": "XYZ456"
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 3,
+        "fields": {
+            "customer": 1,
+            "predefined_car": 3,
+            "is_available": true,
+            "reg_no": "LMN789"
+        }
+    },
+    {
+        "model": "core.car",
+        "pk": 4,
+        "fields": {
+            "customer": 1,
+            "predefined_car": 4,
+            "is_available": true,
+            "reg_no": "DEF321"
+        }
+    }
+]

@@ -1,0 +1,76 @@
+[
+    {
+        "model": "core.user",
+        "pk": 1,
+        "fields": {
+            "name": "John",
+            "surname": "Doe",
+            "phone": "1234567890",
+            "email": "john.doe@example.com",
+            "password": "pbkdf2_sha256$260000$hashedpassword1",
+            "role": "Customer",
+            "created_at": "2024-01-01T00:00:00Z",
+            "is_active": true,
+            "street_address": "123 Main St",
+            "city": "Anytown",
+            "postal_code": "12345"
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 2,
+        "fields": {
+            "name": "Jane",
+            "surname": "Smith",
+            "phone": "0987654321",
+            "email": "jane.smith@example.com",
+            "password": "pbkdf2_sha256$260000$hashedpassword2",
+            "role": "Mechanic",
+            "created_at": "2024-01-01T00:00:00Z",
+            "is_active": true,
+            "street_address": "456 Elm St",
+            "city": "Othertown",
+            "postal_code": "67890"
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 3,
+        "fields": {
+            "name": "Bob",
+            "surname": "Johnson",
+            "phone": "5555555555",
+            "email": "bob.johnson@example.com",
+            "password": "pbkdf2_sha256$260000$hashedpassword3",
+            "role": "Manager",
+            "created_at": "2024-01-01T00:00:00Z",
+            "is_active": true,
+            "street_address": "789 Pine St",
+            "city": "Sometown",
+            "postal_code": "54321"
+        }
+    },
+    {
+        "model": "core.customer",
+        "pk": 1,
+        "fields": {
+            "user": 1
+        }
+    },
+    {
+        "model": "core.mechanic",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "current_workload": 0,
+            "is_available": true
+        }
+    },
+    {
+        "model": "core.manager",
+        "pk": 3,
+        "fields": {
+            "user": 3
+        }
+    }
+]

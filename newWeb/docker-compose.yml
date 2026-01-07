@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "4173:4173"  # Vite preview server uses port 4173
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - .:/webapp
+      - node_modules:/webapp/node_modules
+    restart: always
+
+
+volumes:
+  node_modules:

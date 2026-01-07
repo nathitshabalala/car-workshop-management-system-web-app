@@ -1,0 +1,47 @@
+[
+    {
+        "model": "core.predefinedpart",
+        "pk": 1,
+        "fields": {
+            "name": "Engine Oil",
+            "description": "Engine oil for lubrication",
+            "service_type": 1
+        }
+    },
+    {
+        "model": "core.predefinedpart",
+        "pk": 2,
+        "fields": {
+            "name": "Oil Filter",
+            "description": "Oil filter",
+            "service_type": 1
+        }
+    },
+    {
+        "model": "core.predefinedpart",
+        "pk": 3,
+        "fields": {
+            "name": "Battery",
+            "description": "Car battery",
+            "service_type": 2
+        }
+    },
+    {
+        "model": "core.predefinedpart",
+        "pk": 4,
+        "fields": {
+            "name": "Alignment Kit",
+            "description": "Wheel alignment kit",
+            "service_type": 3
+        }
+    },
+    {
+        "model": "core.predefinedpart",
+        "pk": 5,
+        "fields": {
+            "name": "Suspension Kit",
+            "description": "Suspension inspection kit",
+            "service_type": 4
+        }
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "model": "core.predefinedcar",
+        "pk": 1,
+        "fields": {
+            "name": "Model S",
+            "make": "Tesla",
+            "model": "S",
+            "year": 2020
+        }
+    },
+    {
+        "model": "core.predefinedcar",
+        "pk": 2,
+        "fields": {
+            "name": "Civic",
+            "make": "Honda",
+            "model": "Civic",
+            "year": 2018
+        }
+    },
+    {
+        "model": "core.predefinedcar",
+        "pk": 3,
+        "fields": {
+            "name": "Mustang",
+            "make": "Ford",
+            "model": "Mustang",
+            "year": 2019
+        }
+    },
+    {
+        "model": "core.predefinedcar",
+        "pk": 4,
+        "fields": {
+            "name": "Camry",
+            "make": "Toyota",
+            "model": "Camry",
+            "year": 2021
+        }
+    }
+]

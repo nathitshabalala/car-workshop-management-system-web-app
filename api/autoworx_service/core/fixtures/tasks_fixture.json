@@ -1,0 +1,79 @@
+[
+    {
+        "model": "core.task",
+        "pk": 1,
+        "fields": {
+            "service": 1,
+            "description": "Drain oil",
+            "assigned_to": 2,
+            "status": "Pending",
+            "service_type": 1
+        }
+    },
+    {
+        "model": "core.task",
+        "pk": 2,
+        "fields": {
+            "service": 1,
+            "description": "Replace filter",
+            "assigned_to": 2,
+            "status": "Pending",
+            "service_type": 1
+        }
+    },
+    {
+        "model": "core.task",
+        "pk": 3,
+        "fields": {
+            "service": 1,
+            "description": "Put new oil",
+            "assigned_to": 2,
+            "status": "Pending",
+            "service_type": 1
+        }
+    },
+    {
+        "model": "core.task",
+        "pk": 4,
+        "fields": {
+            "service": 2,
+            "description": "Check battery voltage",
+            "assigned_to": 2,
+            "status": "Pending",
+            "service_type": 2
+        }
+    },
+    {
+        "model": "core.task",
+        "pk": 5,
+        "fields": {
+            "service": 2,
+            "description": "Clean battery terminals",
+            "assigned_to": 2,
+            "status": "Pending",
+            "service_type": 2
+        }
+    },
+    {
+        "model": "core.task",
+        "pk": 6,
+        "fields": {
+            "service": 3,
+            "description": "Adjust wheel alignment",
+            "assigned_to": 2,
+            "status": "Pending",
+            "service_type": 3
+        }
+    },
+    {
+        "model": "core.task",
+        "pk": 7,
+        "fields": {
+            "service": 4,
+            "description": "Inspect suspension components",
+            "assigned_to": 2,
+            "status": "Pending",
+            "service_type": 4
+        }
+    }
+]

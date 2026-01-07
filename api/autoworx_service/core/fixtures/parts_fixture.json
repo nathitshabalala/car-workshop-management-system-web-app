@@ -1,0 +1,47 @@
+[
+    {
+        "model": "core.part",
+        "pk": 1,
+        "fields": {
+            "predefined_car": 1,
+            "predefined_part": 1,
+            "price": "20.00"
+        }
+    },
+    {
+        "model": "core.part",
+        "pk": 2,
+        "fields": {
+            "predefined_car": 1,
+            "predefined_part": 2,
+            "price": "30.00"
+        }
+    },
+    {
+        "model": "core.part",
+        "pk": 3,
+        "fields": {
+            "predefined_car": 2,
+            "predefined_part": 3,
+            "price": "15.00"
+        }
+    },
+    {
+        "model": "core.part",
+        "pk": 4,
+        "fields": {
+            "predefined_car": 3,
+            "predefined_part": 4,
+            "price": "25.00"
+        }
+    },
+    {
+        "model": "core.part",
+        "pk": 5,
+        "fields": {
+            "predefined_car": 4,
+            "predefined_part": 5,
+            "price": "40.00"
+        }
+    }
+]

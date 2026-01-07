@@ -1,0 +1,42 @@
+[
+    {
+        "model": "core.service",
+        "pk": 1,
+        "fields": {
+            "car": 1,
+            "service_type": 1,
+            "status": "Requested",
+            "date": "2024-01-01"
+        }
+    },
+    {
+        "model": "core.service",
+        "pk": 2,
+        "fields": {
+            "car": 2,
+            "service_type": 2,
+            "status": "Requested",
+            "date": "2024-01-02"
+        }
+    },
+    {
+        "model": "core.service",
+        "pk": 3,
+        "fields": {
+            "car": 3,
+            "service_type": 3,
+            "status": "Requested",
+            "date": "2024-01-03"
+        }
+    },
+    {
+        "model": "core.service",
+        "pk": 4,
+        "fields": {
+            "car": 4,
+            "service_type": 4,
+            "status": "Requested",
+            "date": "2024-01-04"
+        }
+    }
+]

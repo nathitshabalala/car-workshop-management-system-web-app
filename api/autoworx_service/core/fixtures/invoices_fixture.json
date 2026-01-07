@@ -1,0 +1,46 @@
+[
+    {
+        "model": "core.invoice",
+        "pk": 1,
+        "fields": {
+            "service": 1,
+            "labor_fees": "50.00",
+            "tax": "5.00",
+            "total_amount": "55.00",
+            "status": "Pending"
+        }
+    },
+    {
+        "model": "core.invoice",
+        "pk": 2,
+        "fields": {
+            "service": 2,
+            "labor_fees": "30.00",
+            "tax": "3.00",
+            "total_amount": "33.00",
+            "status": "Pending"
+        }
+    },
+    {
+        "model": "core.invoice",
+        "pk": 3,
+        "fields": {
+            "service": 3,
+            "labor_fees": "70.00",
+            "tax": "7.00",
+            "total_amount": "77.00",
+            "status": "Pending"
+        }
+    },
+    {
+        "model": "core.invoice",
+        "pk": 4,
+        "fields": {
+            "service": 4,
+            "labor_fees": "80.00",
+            "tax": "8.00",
+            "total_amount": "88.00",
+            "status": "Pending"
+        }
+    }
+]

@@ -1,0 +1,3119 @@
+openapi: 3.0.3
+info:
+  title: ''
+  version: 0.0.0
+paths:
+  /api/appointments/:
+    get:
+      operationId: api_appointments_list
+      tags:
+      - Appointment
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Appointment'
+          description: ''
+  /api/appointments/appointments/update/{id}/:
+    put:
+      operationId: api_appointments_appointments_update_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Appointment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppointmentRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AppointmentRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AppointmentRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Appointment'
+          description: ''
+    patch:
+      operationId: api_appointments_appointments_update_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Appointment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAppointmentRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAppointmentRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAppointmentRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Appointment'
+          description: ''
+  /api/appointments/available-slots/{date_str}/:
+    get:
+      operationId: api_appointments_available_slots_retrieve
+      parameters:
+      - in: path
+        name: date_str
+        schema:
+          type: string
+        required: true
+      tags:
+      - Appointment
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/appointments/create/:
+    post:
+      operationId: api_appointments_create_create
+      tags:
+      - Appointment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAppointmentRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CreateAppointmentRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CreateAppointmentRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateAppointment'
+          description: ''
+  /api/appointments/user/{user_id}/:
+    get:
+      operationId: api_appointments_user_list
+      parameters:
+      - in: path
+        name: user_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Appointment
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Appointment'
+          description: ''
+  /api/carhealth/:
+    get:
+      operationId: api_carhealth_list
+      tags:
+      - CarHealth
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CarHealth'
+          description: ''
+  /api/carhealth/{car_id}/carhealth/:
+    get:
+      operationId: api_carhealth_carhealth_retrieve
+      parameters:
+      - in: path
+        name: car_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - CarHealth
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/carhealth/create/:
+    post:
+      operationId: api_carhealth_create_create
+      tags:
+      - CarHealth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarHealthRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CarHealthRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CarHealthRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarHealth'
+          description: ''
+  /api/carhealth/edit/{id}/:
+    put:
+      operationId: api_carhealth_edit_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - CarHealth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarHealthRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CarHealthRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CarHealthRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarHealth'
+          description: ''
+    patch:
+      operationId: api_carhealth_edit_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - CarHealth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCarHealthRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCarHealthRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCarHealthRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarHealth'
+          description: ''
+  /api/cars/makes/:
+    get:
+      operationId: api_cars_makes_list
+      tags:
+      - Car
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PredefinedCar'
+          description: ''
+  /api/cars/makes/{make}/models/:
+    get:
+      operationId: api_cars_makes_models_retrieve
+      parameters:
+      - in: path
+        name: make
+        schema:
+          type: string
+        required: true
+      tags:
+      - Car
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/cars/makes/{make}/models/{model}/years/:
+    get:
+      operationId: api_cars_makes_models_years_retrieve
+      parameters:
+      - in: path
+        name: make
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: model
+        schema:
+          type: string
+        required: true
+      tags:
+      - Car
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/cars/predefined_cars/:
+    get:
+      operationId: api_cars_predefined_cars_list
+      tags:
+      - Car
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PredefinedCar'
+          description: ''
+  /api/cars/predefined_cars/add/:
+    post:
+      operationId: api_cars_predefined_cars_add_create
+      tags:
+      - Car
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PredefinedCarRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PredefinedCarRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PredefinedCarRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PredefinedCar'
+          description: ''
+  /api/cars/predefined_cars/edit/{id}/:
+    put:
+      operationId: api_cars_predefined_cars_edit_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Car
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PredefinedCarRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PredefinedCarRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PredefinedCarRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PredefinedCar'
+          description: ''
+    patch:
+      operationId: api_cars_predefined_cars_edit_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Car
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPredefinedCarRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPredefinedCarRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPredefinedCarRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PredefinedCar'
+          description: ''
+  /api/cars/register/:
+    post:
+      operationId: api_cars_register_create
+      tags:
+      - Car
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CarRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CarRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+          description: ''
+  /api/cars/user/{customer_id}/cars/{car_id}/set-default/:
+    get:
+      operationId: api_cars_user_cars_set_default_retrieve
+      parameters:
+      - in: path
+        name: car_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: customer_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Car
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: api_cars_user_cars_set_default_partial_update
+      parameters:
+      - in: path
+        name: car_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: customer_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Car
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/cars/user/{user_id}/default_car/:
+    get:
+      operationId: api_cars_user_default_car_retrieve
+      parameters:
+      - in: path
+        name: user_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Car
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Car'
+          description: ''
+  /api/cars/users/{user_id}/cars/:
+    get:
+      operationId: api_cars_users_cars_retrieve
+      parameters:
+      - in: path
+        name: user_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Car
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/invoices/:
+    get:
+      operationId: api_invoices_list
+      tags:
+      - Invoice
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Invoice'
+          description: ''
+  /api/invoices/{id}/:
+    get:
+      operationId: api_invoices_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Invoice
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+          description: ''
+    put:
+      operationId: api_invoices_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Invoice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/InvoiceRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/InvoiceRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+          description: ''
+    patch:
+      operationId: api_invoices_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Invoice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedInvoiceRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedInvoiceRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedInvoiceRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+          description: ''
+  /api/invoices/{user_id}/invoices/:
+    get:
+      operationId: api_invoices_invoices_list
+      parameters:
+      - in: path
+        name: user_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Invoice
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Invoice'
+          description: ''
+  /api/invoices/pending/:
+    get:
+      operationId: api_invoices_pending_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Invoice'
+          description: ''
+  /api/invoices/service/{service_id}/invoice/:
+    get:
+      operationId: api_invoices_service_invoice_retrieve
+      parameters:
+      - in: path
+        name: service_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Invoice
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+          description: ''
+  /api/parts/add/:
+    post:
+      operationId: api_parts_add_create
+      tags:
+      - Part
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PartRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PartRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Part'
+          description: ''
+  /api/parts/list/:
+    get:
+      operationId: api_parts_list_list
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Part'
+          description: ''
+  /api/quotes/:
+    get:
+      operationId: api_quotes_list
+      tags:
+      - Quote
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Quote'
+          description: ''
+  /api/quotes/change_status/{id}/:
+    put:
+      operationId: api_quotes_change_status_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Quote
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateQuoteStatusRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UpdateQuoteStatusRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UpdateQuoteStatusRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateQuoteStatus'
+          description: ''
+    patch:
+      operationId: api_quotes_change_status_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Quote
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUpdateQuoteStatusRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUpdateQuoteStatusRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUpdateQuoteStatusRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateQuoteStatus'
+          description: ''
+  /api/quotes/service/{service_id}/:
+    get:
+      operationId: api_quotes_service_retrieve
+      parameters:
+      - in: path
+        name: service_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/schema/:
+    get:
+      operationId: api_schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - ug
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+  /api/service_types/:
+    get:
+      operationId: api_service_types_list
+      tags:
+      - Service Type
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ServiceType'
+          description: ''
+  /api/service_types/add/:
+    post:
+      operationId: api_service_types_add_create
+      tags:
+      - Service Type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceTypeRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ServiceTypeRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ServiceTypeRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceType'
+          description: ''
+  /api/service_types/edit/{id}/:
+    put:
+      operationId: api_service_types_edit_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Service Type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceTypeRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ServiceTypeRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ServiceTypeRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceType'
+          description: ''
+    patch:
+      operationId: api_service_types_edit_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Service Type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedServiceTypeRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedServiceTypeRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedServiceTypeRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceType'
+          description: ''
+  /api/services/:
+    get:
+      operationId: api_services_list
+      tags:
+      - Service
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Service'
+          description: ''
+  /api/services/add/:
+    post:
+      operationId: api_services_add_create
+      tags:
+      - Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateServiceRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CreateServiceRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CreateServiceRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateService'
+          description: ''
+  /api/services/change_status/{id}/:
+    patch:
+      operationId: api_services_change_status_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Service
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/services/edit/{id}/:
+    put:
+      operationId: api_services_edit_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ServiceRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ServiceRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Service'
+          description: ''
+    patch:
+      operationId: api_services_edit_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Service
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedServiceRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedServiceRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedServiceRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Service'
+          description: ''
+  /api/services/user/{customer_id}/latest_service/:
+    get:
+      operationId: api_services_user_latest_service_retrieve
+      parameters:
+      - in: path
+        name: customer_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Service
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/tasks/:
+    get:
+      operationId: api_tasks_list
+      tags:
+      - Task
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+          description: ''
+  /api/tasks/{id}/status/:
+    patch:
+      operationId: api_tasks_status_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Task
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/tasks/edit/{id}/:
+    put:
+      operationId: api_tasks_edit_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TaskRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TaskRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+          description: ''
+    patch:
+      operationId: api_tasks_edit_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedTaskRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedTaskRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedTaskRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+          description: ''
+  /api/tasks/mechanic/{mechanic_id}/:
+    get:
+      operationId: api_tasks_mechanic_list
+      parameters:
+      - in: path
+        name: mechanic_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Task
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+          description: ''
+  /api/tasks/outstanding/{service_id}/:
+    get:
+      operationId: api_tasks_outstanding_list
+      parameters:
+      - in: path
+        name: service_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Task
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+          description: ''
+  /api/tasks/pending/:
+    get:
+      operationId: api_tasks_pending_list
+      tags:
+      - Task
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+          description: ''
+  /api/tasks/service/{service_id}/:
+    get:
+      operationId: api_tasks_service_list
+      parameters:
+      - in: path
+        name: service_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - Task
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+          description: ''
+  /api/users/:
+    get:
+      operationId: api_users_list
+      tags:
+      - User
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+          description: ''
+  /api/users/customer/{user}/:
+    get:
+      operationId: api_users_customer_retrieve
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this customer.
+        required: true
+      tags:
+      - Customer
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+    put:
+      operationId: api_users_customer_update
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this customer.
+        required: true
+      tags:
+      - Customer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+    patch:
+      operationId: api_users_customer_partial_update
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this customer.
+        required: true
+      tags:
+      - Customer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCustomerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCustomerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCustomerRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+    delete:
+      operationId: api_users_customer_destroy
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this customer.
+        required: true
+      tags:
+      - Customer
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/users/customer/create/:
+    post:
+      operationId: api_users_customer_create_create
+      tags:
+      - Customer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+  /api/users/customers:
+    get:
+      operationId: api_users_customers_list
+      tags:
+      - Customer
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+          description: ''
+  /api/users/login/:
+    post:
+      operationId: api_users_login_create
+      tags:
+      - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Login'
+          description: ''
+  /api/users/manager/{user}/:
+    get:
+      operationId: api_users_manager_retrieve
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this manager.
+        required: true
+      tags:
+      - Manager
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Manager'
+          description: ''
+    put:
+      operationId: api_users_manager_update
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this manager.
+        required: true
+      tags:
+      - Manager
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManagerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ManagerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ManagerRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Manager'
+          description: ''
+    patch:
+      operationId: api_users_manager_partial_update
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this manager.
+        required: true
+      tags:
+      - Manager
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedManagerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedManagerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedManagerRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Manager'
+          description: ''
+    delete:
+      operationId: api_users_manager_destroy
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this manager.
+        required: true
+      tags:
+      - Manager
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/users/manager/create/:
+    post:
+      operationId: api_users_manager_create_create
+      tags:
+      - Manager
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManagerRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ManagerRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ManagerRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Manager'
+          description: ''
+  /api/users/managers:
+    get:
+      operationId: api_users_managers_list
+      tags:
+      - Manager
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Manager'
+          description: ''
+  /api/users/mechanic/{user}/:
+    get:
+      operationId: api_users_mechanic_retrieve
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this mechanic.
+        required: true
+      tags:
+      - Mechanic
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mechanic'
+          description: ''
+    put:
+      operationId: api_users_mechanic_update
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this mechanic.
+        required: true
+      tags:
+      - Mechanic
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MechanicRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MechanicRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MechanicRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mechanic'
+          description: ''
+    patch:
+      operationId: api_users_mechanic_partial_update
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this mechanic.
+        required: true
+      tags:
+      - Mechanic
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedMechanicRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedMechanicRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedMechanicRequest'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mechanic'
+          description: ''
+    delete:
+      operationId: api_users_mechanic_destroy
+      parameters:
+      - in: path
+        name: user
+        schema:
+          type: integer
+        description: A unique value identifying this mechanic.
+        required: true
+      tags:
+      - Mechanic
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/users/mechanic/create/:
+    post:
+      operationId: api_users_mechanic_create_create
+      tags:
+      - Mechanic
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MechanicRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MechanicRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MechanicRequest'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mechanic'
+          description: ''
+  /api/users/mechanics:
+    get:
+      operationId: api_users_mechanics_list
+      tags:
+      - Mechanic
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Mechanic'
+          description: ''
+components:
+  schemas:
+    Appointment:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        date:
+          type: string
+          format: date
+        time:
+          type: string
+          format: time
+        status:
+          $ref: '#/components/schemas/AppointmentStatusEnum'
+        service_details:
+          allOf:
+          - $ref: '#/components/schemas/Service'
+          readOnly: true
+      required:
+      - date
+      - id
+      - service_details
+      - time
+    AppointmentRequest:
+      type: object
+      properties:
+        service:
+          type: integer
+          writeOnly: true
+        date:
+          type: string
+          format: date
+        time:
+          type: string
+          format: time
+        status:
+          $ref: '#/components/schemas/AppointmentStatusEnum'
+      required:
+      - date
+      - service
+      - time
+    AppointmentStatusEnum:
+      enum:
+      - Scheduled
+      - Completed
+      - Cancelled
+      type: string
+      description: |-
+        * `Scheduled` - Scheduled
+        * `Completed` - Completed
+        * `Cancelled` - Cancelled
+    Car:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        customer_details:
+          type: string
+          readOnly: true
+        predefined_car:
+          allOf:
+          - $ref: '#/components/schemas/PredefinedCar'
+          readOnly: true
+        reg_no:
+          type: string
+          maxLength: 15
+        is_default:
+          type: boolean
+        is_available:
+          type: boolean
+      required:
+      - customer_details
+      - id
+      - predefined_car
+      - reg_no
+    CarHealth:
+      type: object
+      properties:
+        odometer:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        battery:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        tires:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        oilLevel:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        brakePads:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        airFilter:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        last_updated:
+          type: string
+          format: date-time
+      required:
+      - airFilter
+      - battery
+      - brakePads
+      - odometer
+      - oilLevel
+      - tires
+    CarHealthRequest:
+      type: object
+      properties:
+        car:
+          type: integer
+          writeOnly: true
+        odometer:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        battery:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        tires:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        oilLevel:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        brakePads:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        airFilter:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        last_updated:
+          type: string
+          format: date-time
+      required:
+      - airFilter
+      - battery
+      - brakePads
+      - car
+      - odometer
+      - oilLevel
+      - tires
+    CarRequest:
+      type: object
+      properties:
+        customer_id:
+          type: integer
+          writeOnly: true
+        predefined_car_id:
+          type: integer
+          writeOnly: true
+        reg_no:
+          type: string
+          minLength: 1
+          maxLength: 15
+        is_default:
+          type: boolean
+        is_available:
+          type: boolean
+      required:
+      - customer_id
+      - predefined_car_id
+      - reg_no
+    CreateAppointment:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        service:
+          type: integer
+        date:
+          type: string
+          format: date
+        time:
+          type: string
+          format: time
+      required:
+      - date
+      - id
+      - service
+      - time
+    CreateAppointmentRequest:
+      type: object
+      properties:
+        service:
+          type: integer
+        date:
+          type: string
+          format: date
+        time:
+          type: string
+          format: time
+      required:
+      - date
+      - service
+      - time
+    CreateService:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        car:
+          type: integer
+      required:
+      - car
+      - id
+    CreateServiceRequest:
+      type: object
+      properties:
+        car:
+          type: integer
+        service_type:
+          type: integer
+          writeOnly: true
+      required:
+      - car
+      - service_type
+    Customer:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/User'
+      required:
+      - user
+    CustomerRequest:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/UserRequest'
+        password:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - user
+    Invoice:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        service:
+          type: integer
+        labor_fees:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        tax:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        total_amount:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        status:
+          type: string
+          maxLength: 20
+        part_invoices:
+          type: array
+          items:
+            $ref: '#/components/schemas/PartInvoice'
+          readOnly: true
+      required:
+      - id
+      - labor_fees
+      - part_invoices
+      - service
+      - tax
+      - total_amount
+    InvoiceRequest:
+      type: object
+      properties:
+        service:
+          type: integer
+        labor_fees:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        tax:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        total_amount:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        status:
+          type: string
+          minLength: 1
+          maxLength: 20
+      required:
+      - labor_fees
+      - service
+      - tax
+      - total_amount
+    Login:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+      required:
+      - email
+    LoginRequest:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          minLength: 1
+        password:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - email
+      - password
+    Manager:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/User'
+      required:
+      - user
+    ManagerRequest:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/UserRequest'
+        password:
+          type: string
+          writeOnly: true
+          minLength: 1
+      required:
+      - user
+    Mechanic:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/User'
+        is_available:
+          type: boolean
+        current_workload:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - user
+    MechanicRequest:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/UserRequest'
+        password:
+          type: string
+          writeOnly: true
+          minLength: 1
+        is_available:
+          type: boolean
+        current_workload:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - user
+    Part:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        predefined_part:
+          type: integer
+        predefined_part_name:
+          type: string
+          readOnly: true
+        predefined_part_description:
+          type: string
+          readOnly: true
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+      required:
+      - id
+      - predefined_part
+      - predefined_part_description
+      - predefined_part_name
+      - price
+    PartInvoice:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        part:
+          type: integer
+        quantity:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+      required:
+      - id
+      - part
+      - price
+    PartInvoiceRequest:
+      type: object
+      properties:
+        part:
+          type: integer
+        quantity:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+      required:
+      - part
+      - price
+    PartRequest:
+      type: object
+      properties:
+        predefined_car:
+          type: integer
+          writeOnly: true
+        predefined_part:
+          type: integer
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+      required:
+      - predefined_car
+      - predefined_part
+      - price
+    PatchedAppointmentRequest:
+      type: object
+      properties:
+        service:
+          type: integer
+          writeOnly: true
+        date:
+          type: string
+          format: date
+        time:
+          type: string
+          format: time
+        status:
+          $ref: '#/components/schemas/AppointmentStatusEnum'
+    PatchedCarHealthRequest:
+      type: object
+      properties:
+        car:
+          type: integer
+          writeOnly: true
+        odometer:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        battery:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        tires:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        oilLevel:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        brakePads:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        airFilter:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        last_updated:
+          type: string
+          format: date-time
+    PatchedCustomerRequest:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/UserRequest'
+        password:
+          type: string
+          writeOnly: true
+          minLength: 1
+    PatchedInvoiceRequest:
+      type: object
+      properties:
+        service:
+          type: integer
+        labor_fees:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        tax:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        total_amount:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        status:
+          type: string
+          minLength: 1
+          maxLength: 20
+    PatchedManagerRequest:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/UserRequest'
+        password:
+          type: string
+          writeOnly: true
+          minLength: 1
+    PatchedMechanicRequest:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/UserRequest'
+        password:
+          type: string
+          writeOnly: true
+          minLength: 1
+        is_available:
+          type: boolean
+        current_workload:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+    PatchedPredefinedCarRequest:
+      type: object
+      properties:
+        make:
+          type: string
+          minLength: 1
+          maxLength: 50
+        model:
+          type: string
+          minLength: 1
+          maxLength: 50
+        year:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        image:
+          type: string
+          format: binary
+          nullable: true
+    PatchedServiceRequest:
+      type: object
+      properties:
+        car_id:
+          type: integer
+          writeOnly: true
+        service:
+          type: integer
+          writeOnly: true
+        status:
+          $ref: '#/components/schemas/StatusC3aEnum'
+    PatchedServiceTypeRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        description:
+          type: string
+          minLength: 1
+        predefined_tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/PredefinedTaskRequest'
+        predefined_parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/PredefinedPartRequest'
+        labour_cost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+    PatchedTaskRequest:
+      type: object
+      properties:
+        description:
+          type: string
+          minLength: 1
+        assigned_to_id:
+          type: integer
+          writeOnly: true
+        status:
+          $ref: '#/components/schemas/TaskStatusEnum'
+        service_type:
+          type: integer
+    PatchedUpdateQuoteStatusRequest:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status553Enum'
+    PredefinedCar:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        make:
+          type: string
+          maxLength: 50
+        model:
+          type: string
+          maxLength: 50
+        year:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        image:
+          type: string
+          format: uri
+          nullable: true
+      required:
+      - id
+      - make
+      - model
+      - year
+    PredefinedCarRequest:
+      type: object
+      properties:
+        make:
+          type: string
+          minLength: 1
+          maxLength: 50
+        model:
+          type: string
+          minLength: 1
+          maxLength: 50
+        year:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        image:
+          type: string
+          format: binary
+          nullable: true
+      required:
+      - make
+      - model
+      - year
+    PredefinedPart:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+          maxLength: 300
+      required:
+      - description
+      - id
+      - name
+    PredefinedPartRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        description:
+          type: string
+          minLength: 1
+          maxLength: 300
+      required:
+      - description
+      - name
+    PredefinedTask:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        description:
+          type: string
+      required:
+      - description
+      - id
+    PredefinedTaskRequest:
+      type: object
+      properties:
+        description:
+          type: string
+          minLength: 1
+      required:
+      - description
+    Quote:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        service:
+          allOf:
+          - $ref: '#/components/schemas/Service'
+          readOnly: true
+        car:
+          allOf:
+          - $ref: '#/components/schemas/Car'
+          readOnly: true
+        parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuotePart'
+          readOnly: true
+        labor_fees:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        tax:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        status:
+          $ref: '#/components/schemas/Status553Enum'
+        total_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+      required:
+      - car
+      - id
+      - labor_fees
+      - parts
+      - service
+      - tax
+      - total_price
+    QuotePart:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        quantity:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+      required:
+      - id
+      - price
+    RoleEnum:
+      enum:
+      - Customer
+      - Mechanic
+      - Manager
+      type: string
+      description: |-
+        * `Customer` - Customer
+        * `Mechanic` - Mechanic
+        * `Manager` - Manager
+    Service:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        car:
+          allOf:
+          - $ref: '#/components/schemas/Car'
+          readOnly: true
+        service_type:
+          allOf:
+          - $ref: '#/components/schemas/ServiceType'
+          readOnly: true
+        status:
+          $ref: '#/components/schemas/StatusC3aEnum'
+        date:
+          type: string
+          format: date
+          readOnly: true
+        tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
+          readOnly: true
+      required:
+      - car
+      - date
+      - id
+      - service_type
+      - tasks
+    ServiceRequest:
+      type: object
+      properties:
+        car_id:
+          type: integer
+          writeOnly: true
+        service:
+          type: integer
+          writeOnly: true
+        status:
+          $ref: '#/components/schemas/StatusC3aEnum'
+      required:
+      - car_id
+      - service
+    ServiceSerializers:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        car:
+          allOf:
+          - $ref: '#/components/schemas/Car'
+          readOnly: true
+        service_type:
+          allOf:
+          - $ref: '#/components/schemas/ServiceType'
+          readOnly: true
+        status:
+          $ref: '#/components/schemas/StatusC3aEnum'
+        date:
+          type: string
+          format: date
+          readOnly: true
+      required:
+      - car
+      - date
+      - id
+      - service_type
+    ServiceSerializersRequest:
+      type: object
+      properties:
+        car_id:
+          type: integer
+          writeOnly: true
+        service:
+          type: integer
+          writeOnly: true
+        status:
+          $ref: '#/components/schemas/StatusC3aEnum'
+      required:
+      - car_id
+      - service
+    ServiceType:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+        predefined_tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/PredefinedTask'
+        predefined_parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/PredefinedPart'
+        labour_cost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+      required:
+      - description
+      - id
+      - name
+      - predefined_parts
+      - predefined_tasks
+    ServiceTypeRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        description:
+          type: string
+          minLength: 1
+        predefined_tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/PredefinedTaskRequest'
+        predefined_parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/PredefinedPartRequest'
+        labour_cost:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+      required:
+      - description
+      - name
+      - predefined_parts
+      - predefined_tasks
+    Status553Enum:
+      enum:
+      - Pending
+      - Accepted
+      - Declined
+      type: string
+      description: |-
+        * `Pending` - Pending
+        * `Accepted` - Accepted
+        * `Declined` - Declined
+    StatusC3aEnum:
+      enum:
+      - Requested
+      - In Progress
+      - Completed
+      - Canceled
+      type: string
+      description: |-
+        * `Requested` - Requested
+        * `In Progress` - In Progress
+        * `Completed` - Completed
+        * `Canceled` - Canceled
+    Task:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        service:
+          allOf:
+          - $ref: '#/components/schemas/ServiceSerializers'
+          readOnly: true
+        description:
+          type: string
+        assigned_to:
+          allOf:
+          - $ref: '#/components/schemas/Mechanic'
+          readOnly: true
+        status:
+          $ref: '#/components/schemas/TaskStatusEnum'
+        service_type:
+          type: integer
+      required:
+      - assigned_to
+      - description
+      - id
+      - service
+      - service_type
+    TaskRequest:
+      type: object
+      properties:
+        description:
+          type: string
+          minLength: 1
+        assigned_to_id:
+          type: integer
+          writeOnly: true
+        status:
+          $ref: '#/components/schemas/TaskStatusEnum'
+        service_type:
+          type: integer
+      required:
+      - assigned_to_id
+      - description
+      - service_type
+    TaskStatusEnum:
+      enum:
+      - Pending
+      - Completed
+      type: string
+      description: |-
+        * `Pending` - Pending
+        * `Completed` - Completed
+    UpdateQuoteStatus:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        status:
+          $ref: '#/components/schemas/Status553Enum'
+        service:
+          type: integer
+          readOnly: true
+      required:
+      - id
+      - service
+    UpdateQuoteStatusRequest:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status553Enum'
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        surname:
+          type: string
+          maxLength: 100
+        phone:
+          type: string
+          nullable: true
+          maxLength: 20
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        street_address:
+          type: string
+          maxLength: 255
+        city:
+          type: string
+          maxLength: 100
+        postal_code:
+          type: string
+          maxLength: 20
+        role:
+          allOf:
+          - $ref: '#/components/schemas/RoleEnum'
+          readOnly: true
+        is_active:
+          type: boolean
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - city
+      - created_at
+      - email
+      - id
+      - is_active
+      - name
+      - postal_code
+      - role
+      - street_address
+      - surname
+    UserRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+        surname:
+          type: string
+          minLength: 1
+          maxLength: 100
+        phone:
+          type: string
+          nullable: true
+          maxLength: 20
+        email:
+          type: string
+          format: email
+          minLength: 1
+          maxLength: 254
+        street_address:
+          type: string
+          minLength: 1
+          maxLength: 255
+        city:
+          type: string
+          minLength: 1
+          maxLength: 100
+        postal_code:
+          type: string
+          minLength: 1
+          maxLength: 20
+      required:
+      - city
+      - email
+      - name
+      - postal_code
+      - street_address
+      - surname
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
